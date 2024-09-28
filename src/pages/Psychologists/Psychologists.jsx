@@ -1,7 +1,7 @@
-import { useEffect, useState, useRef } from "react";
-import PsychologistList from "../../components/PsychologistList/PsychologistList";
-import { firstPageQuery, nextPageQuery } from "../../firebase-db";
-import { get } from "firebase/database";
+import { useEffect, useState } from 'react';
+import PsychologistList from '../../components/PsychologistList/PsychologistList';
+import { firstPageQuery, nextPageQuery } from '../../firebase-db';
+import { get } from 'firebase/database';
 
 const Psychologists = ({ addToFaforites }) => {
   const [items, setItems] = useState([]);
@@ -26,7 +26,7 @@ const Psychologists = ({ addToFaforites }) => {
         setLastLoadedItem(psychologistsArray[psychologistsArray.length - 1]); // Сохраняем последний элемент
         console.log(psychologistsArray[psychologistsArray.length - 1]);
       } else {
-        console.log("Нет данных");
+        console.log('Нет данных');
       }
     } catch (error) {
       console.error(error);
@@ -48,11 +48,11 @@ const Psychologists = ({ addToFaforites }) => {
           : Object.values(data);
 
         // Фильтрация дубликатов по id
-        setItems((prevItems) => {
+        setItems(prevItems => {
           const newItems = psychologistsArray.filter(
-            (item) =>
+            item =>
               !prevItems.some(
-                (prevItem) => prevItem.price_per_hour === item.price_per_hour
+                prevItem => prevItem.price_per_hour === item.price_per_hour
               )
           );
           return [...prevItems, ...newItems];
@@ -60,7 +60,7 @@ const Psychologists = ({ addToFaforites }) => {
 
         setLastLoadedItem(psychologistsArray[psychologistsArray.length - 1]); // Обновляем последний элемент
       } else {
-        console.log("Больше данных нет");
+        console.log('Больше данных нет');
         setVisible(false);
       }
     } catch (error) {
