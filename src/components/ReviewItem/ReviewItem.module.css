@@ -1,35 +1,38 @@
-@import url('/src/utils//variables.css');
-
 .title {
-    display: flex;
-    align-items: center;
-    gap: 16px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
 }
 
 .avatar {
-   width: 60px;
-height: 60px;
-border-radius: 100%;
-background-color: var(--dark-white);
-display: flex;
-align-items: center;
-justify-content: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 100%;
+  background-color: rgba(252, 131, 44, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-p {
+  p {
     font-weight: 600;
     font-size: 24px;
     line-height: 125%;
-    color: var(--red);
-
-}
+    color: #fc832c;
+  }
 }
 
 .name {
-    margin-bottom: 4px;
-    font-weight: 600;
-font-size: 18px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 125%;
+  color: #191a15;
+  text-align: start;
 }
 
 .desc {
-    margin-top: 16px;
+  margin-top: 16px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 125%;
+  color: rgba(25, 26, 21, 0.5);
 }

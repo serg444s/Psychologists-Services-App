@@ -1,15 +1,8 @@
-import IconSvg from '../IconSvg/IconSvg';
-import css from './ReviewItem.module.css';
+import IconSvg from "../IconSvg/IconSvg";
+import css from "./ReviewItem.module.css";
 
 const ReviewItem = ({ review }) => {
-  const avatar = review.reviewer_name.toUpperCase().slice(0, 1);
-
-  const roundRating = number => {
-    const roundedNumber = Math.round(number);
-    return Array.from({ length: roundedNumber }).map((_, index) => (
-      <IconSvg key={index} iconName={'star'} width={16} height={16} />
-    ));
-  };
+  const avatar = review.reviewer.toUpperCase().slice(0, 1);
 
   return (
     <>
@@ -17,9 +10,13 @@ const ReviewItem = ({ review }) => {
         <div className={css.avatar}>
           <p>{avatar}</p>
         </div>
-        <div>
-          <p className={css.name}>{review.reviewer_name}</p>
-          {roundRating(review.reviewer_rating)}
+        <div className={css.align}>
+          <p className={css.name}>{review.reviewer}</p>
+
+          <p className={css.name}>
+            <IconSvg iconName={"star"} width={16} height={16} />
+            {review.rating}
+          </p>
         </div>
       </div>
 

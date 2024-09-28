@@ -1,0 +1,84 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.btnclose {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.wrap {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  margin-bottom: 40px;
+  justify-content: flex-start;
+}
+
+.img {
+  border-radius: 15px;
+  width: 44px;
+  height: 44px;
+}
+
+.name {
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 120%;
+  letter-spacing: -0.02em;
+  color: #191a15;
+  margin-bottom: 20px;
+  max-width: 400px;
+}
+
+.text {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 125%;
+  color: rgba(25, 26, 21, 0.5);
+  margin-bottom: 40px;
+}
+
+.div {
+  display: flex;
+  gap: 8px;
+}
+
+.input {
+  border: 1px solid rgba(25, 26, 21, 0.1);
+  border-radius: 12px;
+  padding: 16px;
+  width: 100%;
+}
+
+.btn {
+  border: none;
+  outline: none;
+  border-radius: 30px;
+  padding: 16px 196px;
+  width: 438px;
+  height: 52px;
+  background: #fc832c;
+  color: white;
+  margin-top: 40px;
+}
+
+.psychologists {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 133%;
+  color: #8a8a89;
+}
+
+.psychologists-name {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  color: #191a15;
+}

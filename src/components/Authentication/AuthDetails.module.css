@@ -1,0 +1,35 @@
+.container {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon {
+  width: 40px;
+  height: 40px;
+  background: #fc832c;
+  border-radius: 10px;
+  padding: 8px;
+}
+
+.name {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  color: #191a15;
+}
+
+.btn {
+  border: 1px solid rgba(25, 26, 21, 0.2);
+  border-radius: 30px;
+  padding: 14px 39px;
+}
+
+.btn:hover,
+.btn:focus {
+  background: #fc832c;
+  border-color: #fc832c;
+  color: white;
+}

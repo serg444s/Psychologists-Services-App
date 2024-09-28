@@ -1,4 +1,3 @@
-
 import css from "./LoadMoreBtn.module.css";
 
 export const LoadMoreBtn = ({ onLoadMore }) => {
