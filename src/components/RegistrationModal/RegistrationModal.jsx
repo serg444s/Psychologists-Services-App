@@ -1,38 +1,38 @@
-import Modal from "react-modal";
-import { useForm } from "react-hook-form";
-import IconSvg from "../IconSvg/IconSvg";
-import css from "./RegistrationModal.module.css";
-import { yupResolver } from "@hookform/resolvers/yup";
-import * as yup from "yup";
-import { createUserWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../../firebase";
+import Modal from 'react-modal';
+import { useForm } from 'react-hook-form';
+import IconSvg from '../IconSvg/IconSvg';
+import css from './RegistrationModal.module.css';
+import { yupResolver } from '@hookform/resolvers/yup';
+import * as yup from 'yup';
+import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { auth } from 'firebase-db';
 
 const customStyles = {
   content: {
-    top: "50%",
-    left: "50%",
-    right: "auto",
-    bottom: "auto",
-    marginRight: "-50%",
-    transform: "translate(-50%, -50%)",
-    padding: "40px",
-    width: "565px",
+    top: '50%',
+    left: '50%',
+    right: 'auto',
+    bottom: 'auto',
+    marginRight: '-50%',
+    transform: 'translate(-50%, -50%)',
+    padding: '40px',
+    width: '565px',
     // height: "509px",
-    borderRadius: "30px",
-    position: "relative",
+    borderRadius: '30px',
+    position: 'relative',
   },
 };
 
 const registrationSchema = yup.object().shape({
-  name: yup.string().required("Name is required"),
-  email: yup.string().email("Invalid email").required("Email is required"),
+  name: yup.string().required('Name is required'),
+  email: yup.string().email('Invalid email').required('Email is required'),
   password: yup
     .string()
-    .min(6, "Password must be at least 6 characters")
-    .required("Password is required"),
+    .min(6, 'Password must be at least 6 characters')
+    .required('Password is required'),
 });
 
-Modal.setAppElement("#root");
+Modal.setAppElement('#root');
 
 const RegistrationModal = ({ modalIsOpen, closeModal }) => {
   const {
@@ -43,7 +43,7 @@ const RegistrationModal = ({ modalIsOpen, closeModal }) => {
     resolver: yupResolver(registrationSchema),
   });
 
-  const onSubmit = (data) => {
+  const onSubmit = data => {
     console.log(data); // Дії при відправці форми
     createUserWithEmailAndPassword(
       auth,
@@ -51,11 +51,11 @@ const RegistrationModal = ({ modalIsOpen, closeModal }) => {
       data.password,
       data.displayName
     )
-      .then((user) => {
+      .then(user => {
         console.log(user);
         closeModal();
       })
-      .catch((e) => {
+      .catch(e => {
         console.error(e);
       });
   };
@@ -75,13 +75,13 @@ const RegistrationModal = ({ modalIsOpen, closeModal }) => {
         </p>
 
         <button onClick={closeModal} className={css.btnclose}>
-          <IconSvg iconName={"close"} width={26} height={26} />
+          <IconSvg iconName={'close'} width={26} height={26} />
         </button>
       </div>
       <form onSubmit={handleSubmit(onSubmit)} className={css.form}>
         <div>
           <input
-            {...register("displayName")}
+            {...register('displayName')}
             placeholder="Name"
             className={css.input}
           />
@@ -89,7 +89,7 @@ const RegistrationModal = ({ modalIsOpen, closeModal }) => {
         </div>
         <div>
           <input
-            {...register("email")}
+            {...register('email')}
             placeholder="Email"
             className={css.input}
           />
@@ -98,7 +98,7 @@ const RegistrationModal = ({ modalIsOpen, closeModal }) => {
         <div>
           <input
             type="password"
-            {...register("password")}
+            {...register('password')}
             placeholder="Password"
             className={css.input}
           />
