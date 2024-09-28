@@ -6,14 +6,12 @@ import { BrowserRouter } from 'react-router-dom';
 import { store } from '../src/redux/store';
 import App from 'components/App/App';
 
-
-
-ReactDOM.createRoot(document.getElementById("root")).render(
+ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-      <Provider store={store}>
-    <BrowserRouter basename="/Advert-App-Camper">
-      <App />
-    </BrowserRouter>
+    <Provider store={store}>
+      <BrowserRouter basename="/Psychologists-Services-App">
+        <App />
+      </BrowserRouter>
     </Provider>
   </React.StrictMode>
 );
