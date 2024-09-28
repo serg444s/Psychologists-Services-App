@@ -1,31 +1,15 @@
-import { Link, NavLink } from "react-router-dom";
-import css from "./Navigation.module.css";
-import clsx from "clsx";
-import { useEffect, useState } from "react";
-import UserBar from "../UserBar/UserBar";
-import LogInModal from "../LogInModal/LogInModal";
-import RegistrationModal from "../RegistrationModal/RegistrationModal";
-import AuthDetails from "../Authentication/AuthDetails";
-import { onAuthStateChanged } from "firebase/auth";
-import { auth } from "../../firebase";
+import { Link, NavLink } from 'react-router-dom';
+import css from './Navigation.module.css';
+import clsx from 'clsx';
+import { useState } from 'react';
+import UserBar from '../UserBar/UserBar';
+import LogInModal from '../LogInModal/LogInModal';
+import RegistrationModal from '../RegistrationModal/RegistrationModal';
+import AuthDetails from '../Authentication/AuthDetails';
 
-const Navigation = () => {
+const Navigation = ({ authUser }) => {
   const [openSignModal, setSineModalOpen] = useState(false);
   const [openRegModal, setRegModalOpen] = useState(false);
-  const [authUser, setAuthUser] = useState(null);
-
-  useEffect(() => {
-    const listen = onAuthStateChanged(auth, (user) => {
-      if (user) {
-        setAuthUser(user);
-      } else {
-        setAuthUser(null);
-      }
-    });
-    return () => {
-      listen();
-    };
-  }, []);
 
   function onOpenSignModal() {
     setSineModalOpen(true);

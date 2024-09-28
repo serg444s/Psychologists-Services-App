@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import PsychologistList from '../../components/PsychologistList/PsychologistList';
 import { firstPageQuery, nextPageQuery } from '../../firebase-db';
 import { get } from 'firebase/database';
+import toast from 'react-hot-toast';
 
 const Psychologists = ({ addToFaforites }) => {
   const [items, setItems] = useState([]);
@@ -24,12 +25,11 @@ const Psychologists = ({ addToFaforites }) => {
           : Object.values(data);
         setItems(psychologistsArray);
         setLastLoadedItem(psychologistsArray[psychologistsArray.length - 1]); // Сохраняем последний элемент
-        console.log(psychologistsArray[psychologistsArray.length - 1]);
       } else {
-        console.log('Нет данных');
+        toast.error('No contetnt');
       }
     } catch (error) {
-      console.error(error);
+      toast.error('Some went wrong');
     }
     setLoading(false);
   };
