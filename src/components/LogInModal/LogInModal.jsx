@@ -44,7 +44,6 @@ const LogInModal = ({ modalIsOpen, closeModal }) => {
   });
 
   const onSubmit = data => {
-    console.log(data);
     signInWithEmailAndPassword(auth, data.email, data.password)
       .then(user => {
         closeModal();

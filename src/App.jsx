@@ -35,18 +35,18 @@ function App() {
 
   function addToFaforites(newItem) {
     if (!authUser) {
-      toast.error('Only auth user');
+      toast.error('Please Sign In');
       return;
     }
     const index = favorites.findIndex(item => item.name === newItem.name);
     if (index === -1) {
       favorites.push(newItem);
-      console.log('add', index, newItem.name);
     } else {
-      setFavorites(favorites.splice(index, 1));
-      console.log('delete', index, newItem.name);
+      const updatedFavorites = favorites.filter(
+        item => item.name !== newItem.name
+      );
+      setFavorites(updatedFavorites);
     }
-    console.log('favorites', favorites);
   }
 
   return (

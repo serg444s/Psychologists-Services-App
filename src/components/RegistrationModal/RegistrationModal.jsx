@@ -6,6 +6,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { auth } from 'firebase-db';
+import toast from 'react-hot-toast';
 
 const customStyles = {
   content: {
@@ -44,7 +45,6 @@ const RegistrationModal = ({ modalIsOpen, closeModal }) => {
   });
 
   const onSubmit = data => {
-    console.log(data); // Дії при відправці форми
     createUserWithEmailAndPassword(
       auth,
       data.email,
@@ -52,11 +52,10 @@ const RegistrationModal = ({ modalIsOpen, closeModal }) => {
       data.displayName
     )
       .then(user => {
-        console.log(user);
         closeModal();
       })
       .catch(e => {
-        console.error(e);
+        toast.error('Some went wrong');
       });
   };
 
