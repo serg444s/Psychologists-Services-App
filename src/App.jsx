@@ -16,7 +16,10 @@ function App() {
   );
   const Favorites = lazy(() => import('./pages/Favorites/Favorites.jsx'));
 
-  const [favorites, setFavorites] = useState([]);
+  const [favorites, setFavorites] = useState(() => {
+    const savedFavorites = localStorage.getItem('favorites');
+    return savedFavorites ? JSON.parse(savedFavorites) : [];
+  });
 
   const [authUser, setAuthUser] = useState(null);
 
@@ -33,6 +36,10 @@ function App() {
     };
   }, []);
 
+  useEffect(() => {
+    localStorage.setItem('favorites', JSON.stringify(favorites));
+  }, [favorites]);
+
   function addToFaforites(newItem) {
     if (!authUser) {
       toast.error('Please Sign In');
@@ -40,12 +47,15 @@ function App() {
     }
     const index = favorites.findIndex(item => item.name === newItem.name);
     if (index === -1) {
+      const updatedFavorites = [...favorites, newItem];
       favorites.push(newItem);
+      localStorage.setItem('favorites', JSON.stringify(updatedFavorites));
     } else {
       const updatedFavorites = favorites.filter(
         item => item.name !== newItem.name
       );
       setFavorites(updatedFavorites);
+      localStorage.setItem('favorites', JSON.stringify(updatedFavorites));
     }
   }
 
