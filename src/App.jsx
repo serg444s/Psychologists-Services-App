@@ -2,12 +2,12 @@ import { lazy, Suspense, useEffect, useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import './App.css';
 import Navigation from './components/Navigation/Navigation.jsx';
-import NotFoundPage from './pages/NotFound/NotFound.jsx';
 import Loader from './components/Loader/Loader.jsx';
 import PrivateRoute from './PrivateRoute.jsx';
 import toast, { Toaster } from 'react-hot-toast';
 import { onAuthStateChanged } from 'firebase/auth';
 import { auth } from 'firebase-db';
+import NotFoundPage from 'pages/NotFound/NotFound';
 
 function App() {
   const Home = lazy(() => import('./pages/Home/Home.jsx'));
