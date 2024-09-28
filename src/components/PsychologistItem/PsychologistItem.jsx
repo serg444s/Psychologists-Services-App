@@ -1,7 +1,7 @@
-import { useState } from "react";
-import IconSvg from "../IconSvg/IconSvg";
-import css from "./PsychologistItem.module.css";
-import ReviewList from "../ReviewsList/ReviewsList";
+import { useEffect, useState } from 'react';
+import IconSvg from '../IconSvg/IconSvg';
+import css from './PsychologistItem.module.css';
+import ReviewList from '../ReviewsList/ReviewsList';
 
 const PsychologistItem = ({ item, addToFaforites }) => {
   const [show, setShow] = useState(false);
@@ -10,11 +10,21 @@ const PsychologistItem = ({ item, addToFaforites }) => {
     setShow(true);
   }
 
+  const [isFavorite, setIsFavorite] = useState(false);
+
+  useEffect(() => {
+    const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+    const isItemFavorite = favorites.some(
+      favItem => favItem.name === item.name
+    );
+    setIsFavorite(isItemFavorite);
+  }, [item.name]);
+
   return (
     <div className={css.container}>
       <div className={css.imgwrap}>
         <img
-          alt={item.name || "Psychologist"}
+          alt={item.name || 'Psychologist'}
           src={item.avatar_url}
           className={css.img}
         />
@@ -27,7 +37,7 @@ const PsychologistItem = ({ item, addToFaforites }) => {
           </div>
           <div className={css.details}>
             <p className={css.reviews}>
-              <IconSvg width={16} height={16} iconName={"star"} />
+              <IconSvg width={16} height={16} iconName={'star'} />
               {`Raiting: ${item.rating}`}
             </p>
             <p
@@ -39,7 +49,7 @@ const PsychologistItem = ({ item, addToFaforites }) => {
               }}
               className={css.add}
             >
-              <IconSvg iconName={"hart"} />
+              <IconSvg iconName={isFavorite ? 'favorite' : 'hart'} />
             </button>
           </div>
         </div>

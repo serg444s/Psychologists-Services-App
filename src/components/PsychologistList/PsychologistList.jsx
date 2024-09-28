@@ -1,7 +1,7 @@
-import Loader from "../Loader/Loader";
-import { LoadMoreBtn } from "../LoadMoreBtn/LoadMoreBtn";
-import PsychologistItem from "../PsychologistItem/PsychologistItem";
-import css from "./PsychologistList.module.css";
+import Loader from '../Loader/Loader';
+import { LoadMoreBtn } from '../LoadMoreBtn/LoadMoreBtn';
+import PsychologistItem from '../PsychologistItem/PsychologistItem';
+import css from './PsychologistList.module.css';
 
 const PsychologistList = ({
   items,
@@ -13,7 +13,7 @@ const PsychologistList = ({
   return (
     <>
       <ul className={css.list}>
-        {items.map((item) => {
+        {items.map(item => {
           return (
             <li key={item.name}>
               <PsychologistItem item={item} addToFaforites={addToFaforites} />
