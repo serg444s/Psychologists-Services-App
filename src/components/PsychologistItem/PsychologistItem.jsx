@@ -28,6 +28,7 @@ const PsychologistItem = ({ item, addToFaforites }) => {
           src={item.avatar_url}
           className={css.img}
         />
+        <IconSvg iconName={'ball'} styles={css.icon} width={14} height={14} />
       </div>
       <div className={css.content}>
         <div className={css.header}>

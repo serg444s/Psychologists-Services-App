@@ -15,13 +15,12 @@ function App() {
     import('./pages/Psychologists/Psychologists.jsx')
   );
   const Favorites = lazy(() => import('./pages/Favorites/Favorites.jsx'));
+  const [authUser, setAuthUser] = useState(null);
 
   const [favorites, setFavorites] = useState(() => {
     const savedFavorites = localStorage.getItem('favorites');
     return savedFavorites ? JSON.parse(savedFavorites) : [];
   });
-
-  const [authUser, setAuthUser] = useState(null);
 
   useEffect(() => {
     const listen = onAuthStateChanged(auth, user => {

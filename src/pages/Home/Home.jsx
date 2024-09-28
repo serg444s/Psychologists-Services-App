@@ -1,6 +1,6 @@
-import { Link } from "react-router-dom";
-import css from "./Home.module.css";
-import IconSvg from "../../components/IconSvg/IconSvg";
+import { Link } from 'react-router-dom';
+import css from './Home.module.css';
+import IconSvg from '../../components/IconSvg/IconSvg';
 
 const Home = () => {
   return (
@@ -20,12 +20,23 @@ const Home = () => {
       <div className={css.wrapper}>
         <div className={css.orange}>
           <div className={css.iconwrap}>
-            <IconSvg iconName={"done"} />
+            <IconSvg iconName={'done'} />
           </div>
           <div>
             <p className={css.description}>Experienced psychologists</p>
             <p className={css.number}>15,000</p>
           </div>
+        </div>
+        <div className={css.users}>
+          <IconSvg
+            iconName={'users'}
+            styles={css.icon}
+            width={25}
+            height={25}
+          />
+        </div>
+        <div className={css.znak}>
+          <IconSvg iconName={'znak'} styles={css.icon} width={10} height={15} />
         </div>
       </div>
     </div>

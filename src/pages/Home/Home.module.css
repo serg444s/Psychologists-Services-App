@@ -52,8 +52,36 @@
   border-radius: 10px;
   width: 464px;
   height: 526px;
-  background-image: url("../../img/image.jpg");
+  background-image: url('../../img/image.jpg');
   position: relative;
+}
+
+.users {
+  width: 48px;
+  height: 48px;
+  background: #fbc75e;
+  border-radius: 10px;
+  transform: rotate(15deg);
+  position: absolute;
+  top: 40px;
+  right: -30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.znak {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  transform: rotate(-15deg);
+  position: absolute;
+  background: #54be96;
+  top: 200px;
+  left: -15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .orange {
