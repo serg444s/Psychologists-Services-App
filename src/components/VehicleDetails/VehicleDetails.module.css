@@ -1,0 +1,45 @@
+.container {
+    margin-top: 44px;
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+
+
+    li {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-weight: 500;
+font-size: 18px;
+line-height: 133%;
+text-align: center;
+
+p {
+    font-weight: 500;
+font-size: 18px;
+line-height: 1.33;
+text-align: center;
+}
+    }
+
+   
+}
+
+.title {
+    font-weight: 600;
+font-size: 20px;
+line-height: 1.2;
+}
+
+.line {
+    max-width: 100%;  
+    height: 2px;
+      background-color: rgba(16, 24, 40, 0.1);
+      margin-top: 24px;
+      margin-bottom: 24px;
+
+    }
+  

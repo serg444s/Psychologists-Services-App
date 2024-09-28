@@ -1,0 +1,19 @@
+.details {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+
+    li {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 100px;
+        gap: 8px;
+padding: 12px 18px;
+height: 44px;
+background: var(--dark-white);
+mix-blend-mode: multiply;
+
+    }
+}

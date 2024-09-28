@@ -1,0 +1,76 @@
+@import url('/src/utils//variables.css');
+
+
+:root {
+  font-family: Inter, system-ui, Helvetica, Arial, sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  color: currentColor;
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background-color: #FFFFFF;
+  color: var(--black);
+
+}
+html {
+  scroll-behavior: smooth;
+}
+.modal-open {
+  overflow: hidden;
+}
+
+::-webkit-scrollbar {
+  background-color: white;
+  width: 8px;
+  border-radius: 7px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d9d9d9;;
+  width: 8px;
+  border-radius: 7px;
+}

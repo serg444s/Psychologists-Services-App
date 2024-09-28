@@ -1,0 +1,42 @@
+.container {
+    border: 1px solid rgba(16, 24, 40, 0.2);
+    border-radius: 10px;
+    padding: 24px;
+    width: 1000px;
+}
+
+.text {
+    font-weight: 600;
+font-size: 20px;
+line-height: 1.2;
+color: var(--gray);
+margin: 48px auto;
+text-align: center;
+
+}
+
+.wrapper {
+    width: 600px;
+    margin: 48px auto;
+}
+
+
+.link {
+    border: none;
+    transition: all 0.25s ease;
+    outline: none;
+    border-radius: 200px;
+background: var(--red);
+color:  var(--white);
+border-radius: 200px;
+padding: 16px 60px;
+width: 160px;
+height: 56px;
+margin-left: 350px;
+margin-top: 24px;
+  }
+  
+  .link:hover,
+  .link:focus {
+    background-color: var(--hover-red);
+  }
