@@ -4,10 +4,10 @@ import { firstPageQuery, nextPageQuery } from '../../firebase-db';
 import { get } from 'firebase/database';
 import toast from 'react-hot-toast';
 
-const Psychologists = ({ addToFaforites }) => {
+const Psychologists = ({ addToFaforites, authUser }) => {
   const [items, setItems] = useState([]);
-  const [lastLoadedItem, setLastLoadedItem] = useState(null); // Для отслеживания последнего загруженного элемента
-  const [loading, setLoading] = useState(false); // Для предотвращения многократных загрузок
+  const [lastLoadedItem, setLastLoadedItem] = useState(null);
+  const [loading, setLoading] = useState(false);
   const [visible, setVisible] = useState(true);
 
   useEffect(() => {
@@ -24,7 +24,7 @@ const Psychologists = ({ addToFaforites }) => {
           ? data
           : Object.values(data);
         setItems(psychologistsArray);
-        setLastLoadedItem(psychologistsArray[psychologistsArray.length - 1]); // Сохраняем последний элемент
+        setLastLoadedItem(psychologistsArray[psychologistsArray.length - 1]);
       } else {
         toast.error('No contetnt');
       }
@@ -38,7 +38,7 @@ const Psychologists = ({ addToFaforites }) => {
     if (!lastLoadedItem || loading) return;
 
     setLoading(true);
-    const nextQuery = nextPageQuery(lastLoadedItem.price_per_hour); // Используем уникальный идентификатор
+    const nextQuery = nextPageQuery(lastLoadedItem.price_per_hour);
     try {
       const snapshot = await get(nextQuery);
       if (snapshot.exists()) {
@@ -47,7 +47,6 @@ const Psychologists = ({ addToFaforites }) => {
           ? data
           : Object.values(data);
 
-        // Фильтрация дубликатов по id
         setItems(prevItems => {
           const newItems = psychologistsArray.filter(
             item =>
@@ -58,13 +57,13 @@ const Psychologists = ({ addToFaforites }) => {
           return [...prevItems, ...newItems];
         });
 
-        setLastLoadedItem(psychologistsArray[psychologistsArray.length - 1]); // Обновляем последний элемент
+        setLastLoadedItem(psychologistsArray[psychologistsArray.length - 1]);
       } else {
-        console.log('Больше данных нет');
         setVisible(false);
+        toast.error('No data');
       }
     } catch (error) {
-      console.error(error);
+      toast.error('Some went wrong');
     }
     setLoading(false);
   };
@@ -72,6 +71,7 @@ const Psychologists = ({ addToFaforites }) => {
   return (
     <div>
       <PsychologistList
+        authUser={authUser}
         items={items}
         loadMore={onLoadMore}
         loading={loading}

@@ -16,45 +16,48 @@ function App() {
   );
   const Favorites = lazy(() => import('./pages/Favorites/Favorites.jsx'));
   const [authUser, setAuthUser] = useState(null);
-
-  const [favorites, setFavorites] = useState(() => {
-    const savedFavorites = localStorage.getItem('favorites');
-    return savedFavorites ? JSON.parse(savedFavorites) : [];
-  });
+  const [favorites, setFavorites] = useState([]);
 
   useEffect(() => {
     const listen = onAuthStateChanged(auth, user => {
       if (user) {
         setAuthUser(user);
+        const savedFavorites = localStorage.getItem('favorites');
+        if (savedFavorites) {
+          setFavorites(JSON.parse(savedFavorites));
+        }
       } else {
         setAuthUser(null);
+        setFavorites([]);
       }
     });
+
     return () => {
       listen();
     };
   }, []);
 
   useEffect(() => {
-    localStorage.setItem('favorites', JSON.stringify(favorites));
-  }, [favorites]);
+    if (authUser) {
+      localStorage.setItem('favorites', JSON.stringify(favorites));
+    }
+  }, [favorites, authUser]);
 
   function addToFaforites(newItem) {
     if (!authUser) {
       toast.error('Please Sign In');
       return;
     }
+
     const index = favorites.findIndex(item => item.name === newItem.name);
+    let updatedFavorites;
+
     if (index === -1) {
-      const updatedFavorites = [...favorites, newItem];
-      favorites.push(newItem);
-      localStorage.setItem('favorites', JSON.stringify(updatedFavorites));
-    } else {
-      const updatedFavorites = favorites.filter(
-        item => item.name !== newItem.name
-      );
+      updatedFavorites = [...favorites, newItem];
       setFavorites(updatedFavorites);
-      localStorage.setItem('favorites', JSON.stringify(updatedFavorites));
+    } else {
+      updatedFavorites = favorites.filter(item => item.name !== newItem.name);
+      setFavorites(updatedFavorites);
     }
   }
 
@@ -66,7 +69,12 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route
             path="/psychologists"
-            element={<Psychologists addToFaforites={addToFaforites} />}
+            element={
+              <Psychologists
+                addToFaforites={addToFaforites}
+                authUser={authUser}
+              />
+            }
           />
           <Route
             path="/favorites"
@@ -75,6 +83,7 @@ function App() {
                 <Favorites
                   favorites={favorites}
                   addToFaforites={addToFaforites}
+                  authUser={authUser}
                 />
               </PrivateRoute>
             }

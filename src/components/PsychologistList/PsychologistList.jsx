@@ -9,6 +9,7 @@ const PsychologistList = ({
   loading,
   visible,
   addToFaforites,
+  authUser,
 }) => {
   return (
     <>
@@ -16,7 +17,11 @@ const PsychologistList = ({
         {items.map(item => {
           return (
             <li key={item.name}>
-              <PsychologistItem item={item} addToFaforites={addToFaforites} />
+              <PsychologistItem
+                item={item}
+                addToFaforites={addToFaforites}
+                authUser={authUser}
+              />
             </li>
           );
         })}
