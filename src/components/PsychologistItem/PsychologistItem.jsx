@@ -48,7 +48,7 @@ const PsychologistItem = ({ item, addToFaforites, authUser }) => {
             </p>
             <p
               className={css.reviews}
-            >{`Price/1our: ${item.price_per_hour}$`}</p>
+            >{`Price/1hour: ${item.price_per_hour}$`}</p>
             <button
               onClick={() => {
                 addToFaforites(item);

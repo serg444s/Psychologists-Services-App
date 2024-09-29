@@ -3,6 +3,7 @@ import PsychologistList from '../../components/PsychologistList/PsychologistList
 import { firstPageQuery, nextPageQuery } from '../../firebase-db';
 import { get } from 'firebase/database';
 import toast from 'react-hot-toast';
+import FilterComponent from '../../components/FilterComponent/FilterComponent';
 
 const Psychologists = ({ addToFaforites, authUser }) => {
   const [items, setItems] = useState([]);
@@ -69,7 +70,8 @@ const Psychologists = ({ addToFaforites, authUser }) => {
   };
 
   return (
-    <div>
+    <>
+      <FilterComponent />
       <PsychologistList
         authUser={authUser}
         items={items}
@@ -78,7 +80,7 @@ const Psychologists = ({ addToFaforites, authUser }) => {
         visible={visible}
         addToFaforites={addToFaforites}
       />
-    </div>
+    </>
   );
 };
 
