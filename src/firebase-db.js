@@ -9,10 +9,8 @@ import {
   orderByChild,
 } from 'firebase/database';
 
-const API_KEY = 'AIzaSyCdUj8puEDK2rJrF4bWiuZ5z9Jkc-y0SLc';
-
 const firebaseConfig = {
-  apiKey: API_KEY,
+  apiKey: 'AIzaSyCdUj8puEDK2rJrF4bWiuZ5z9Jkc-y0SLc',
   authDomain: 'psychologists-services-2e99e.firebaseapp.com',
   databaseURL:
     'https://psychologists-services-2e99e-default-rtdb.europe-west1.firebasedatabase.app',

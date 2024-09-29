@@ -13,8 +13,6 @@ const Psychologists = ({ addToFaforites, authUser }) => {
   const [filter, setFilter] = useState('');
 
   function onFilterChange(value) {
-    console.log('filter value', value);
-
     setFilter(value);
   }
 
@@ -44,18 +42,12 @@ const Psychologists = ({ addToFaforites, authUser }) => {
       const snapshot = await get(firstPageQuery);
       if (snapshot.exists()) {
         const data = snapshot.val();
-        console.log('data', data);
         const psychologistsArray = Array.isArray(data)
           ? data
           : Object.values(data);
-
-        console.log('psychologistsArray', psychologistsArray);
-
         setItems(psychologistsArray);
 
         const lastItem = psychologistsArray[psychologistsArray.length - 1];
-
-        console.log('lastItem', lastItem.psychologId);
 
         setLastLoadedItem(lastItem);
       } else {
@@ -63,7 +55,6 @@ const Psychologists = ({ addToFaforites, authUser }) => {
       }
     } catch (error) {
       toast.error('Some went wrong');
-      console.log(error);
     }
     setLoading(false);
   };
@@ -80,16 +71,12 @@ const Psychologists = ({ addToFaforites, authUser }) => {
       const snapshot = await get(nextQuery);
       if (snapshot.exists()) {
         const data = snapshot.val();
-        console.log('next data', data);
-        console.log('nex array', Array.isArray(data));
 
         const psychologistsArray = Array.isArray(data)
           ? data
           : Object.values(data);
 
         console.log('current array', Object.values(data));
-
-        // setItems(prevItems => [...prevItems, ...psychologistsArray]);
 
         setItems(prevItems => {
           const newItems = psychologistsArray.filter(
@@ -112,43 +99,6 @@ const Psychologists = ({ addToFaforites, authUser }) => {
     }
     setLoading(false);
   };
-
-  // const onLoadMore = async () => {
-  //   if (!lastLoadedItem || loading) return;
-  //   setLoading(true);
-  //   const nextQuery = nextPageQuery(lastLoadedItem.name);
-  //   try {
-  //     const snapshot = await get(nextQuery);
-  //     if (snapshot.exists()) {
-  //       const data = snapshot.val();
-  //       console.log('next data', data);
-
-  //       setItems(prevItems => [...prevItems, ...data]);
-
-  //       const psychologistsArray = Array.isArray(data)
-  //         ? data
-  //         : Object.values(data);
-
-  //       setItems(prevItems => {
-  //         const newItems = psychologistsArray.filter(
-  //           item =>
-  //             !prevItems.some(
-  //               prevItem => prevItem.price_per_hour === item.price_per_hour
-  //             )
-  //         );
-  //         return [...prevItems, ...newItems];
-  //       });
-
-  //       setLastLoadedItem(data[data.length - 1]);
-  //     } else {
-  //       setVisible(false);
-  //       toast.error('No data');
-  //     }
-  //   } catch (error) {
-  //     toast.error('Some went wrong');
-  //   }
-  //   setLoading(false);
-  // };
 
   return (
     <>
