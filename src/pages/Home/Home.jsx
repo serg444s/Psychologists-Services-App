@@ -4,7 +4,7 @@ import IconSvg from '../../components/IconSvg/IconSvg';
 
 const Home = () => {
   return (
-    <div className={css.container}>
+    <div className={css.homecontainer}>
       <div className={css.main}>
         <h1 className={css.title}>
           The road to the <span>depths</span> of the human soul
