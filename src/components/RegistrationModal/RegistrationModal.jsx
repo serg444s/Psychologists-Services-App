@@ -45,12 +45,7 @@ const RegistrationModal = ({ modalIsOpen, closeModal }) => {
   });
 
   const onSubmit = data => {
-    createUserWithEmailAndPassword(
-      auth,
-      data.email,
-      data.password,
-      data.displayName
-    )
+    createUserWithEmailAndPassword(auth, data.email, data.password, data.name)
       .then(user => {
         closeModal();
       })
@@ -80,7 +75,7 @@ const RegistrationModal = ({ modalIsOpen, closeModal }) => {
       <form onSubmit={handleSubmit(onSubmit)} className={css.form}>
         <div>
           <input
-            {...register('displayName')}
+            {...register('name')}
             placeholder="Name"
             className={css.input}
           />
