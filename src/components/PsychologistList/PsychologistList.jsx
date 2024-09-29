@@ -15,8 +15,10 @@ const PsychologistList = ({
     <>
       <ul className={css.list}>
         {items.map(item => {
+          if (item.psychologId) {
+          }
           return (
-            <li key={item.name}>
+            <li key={item.psychologId}>
               <PsychologistItem
                 item={item}
                 addToFaforites={addToFaforites}
@@ -26,6 +28,7 @@ const PsychologistList = ({
           );
         })}
       </ul>
+
       {loading && <Loader />}
       {!loading && visible && <LoadMoreBtn onLoadMore={loadMore} />}
     </>

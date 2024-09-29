@@ -15,12 +15,10 @@ const PsychologistItem = ({ item, addToFaforites, authUser }) => {
   useEffect(() => {
     if (!authUser) return;
     const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
-    console.log('favorites', favorites);
 
     const isItemFavorite = favorites.some(
       favItem => favItem.name === item.name
     );
-    console.log('isItemFavorite', isItemFavorite);
 
     setIsFavorite(isItemFavorite);
   }, [item.name, authUser]);

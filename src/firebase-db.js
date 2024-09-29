@@ -4,9 +4,9 @@ import {
   getDatabase,
   ref,
   query,
-  orderByChild,
   limitToFirst,
   startAfter,
+  orderByChild,
 } from 'firebase/database';
 
 const API_KEY = 'AIzaSyCdUj8puEDK2rJrF4bWiuZ5z9Jkc-y0SLc';
@@ -31,14 +31,16 @@ const limit = 3;
 
 export const firstPageQuery = query(
   ref(db, 'psychologists'),
-  orderByChild('price_per_hour'),
+  orderByChild('psychologId'),
   limitToFirst(limit)
 );
 
-export const nextPageQuery = lastId =>
-  query(
+export function nextPageQuery(lastItem) {
+  console.log('lastKey', lastItem);
+  return query(
     ref(db, 'psychologists'),
-    orderByChild('price_per_hour'),
-    startAfter(lastId),
+    orderByChild('psychologId'),
+    startAfter(lastItem),
     limitToFirst(limit)
   );
+}
