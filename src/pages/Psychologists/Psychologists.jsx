@@ -3,13 +3,40 @@ import PsychologistList from '../../components/PsychologistList/PsychologistList
 import { firstPageQuery, nextPageQuery } from '../../firebase-db';
 import { get } from 'firebase/database';
 import toast from 'react-hot-toast';
-import FilterComponent from '../../components/FilterComponent/FilterComponent';
+import SortComponent from 'components/SortComponent/SortComponent';
 
 const Psychologists = ({ addToFaforites, authUser }) => {
   const [items, setItems] = useState([]);
   const [lastLoadedItem, setLastLoadedItem] = useState(null);
   const [loading, setLoading] = useState(false);
   const [visible, setVisible] = useState(true);
+  const [filter, setFilter] = useState('');
+
+  function onFilterChange(value) {
+    console.log('filter value', value);
+
+    setFilter(value);
+  }
+
+  function toSortItems(items, filter) {
+    if (filter === 'A to Z') {
+      return items.sort((a, b) => a.name.localeCompare(b.name));
+    } else if (filter === 'Z to A') {
+      return items.sort((a, b) => b.name.localeCompare(a.name));
+    } else if (filter === 'Low to High') {
+      return items.sort((a, b) => a.price_per_hour - b.price_per_hour);
+    } else if (filter === 'High to Low') {
+      return items.sort((a, b) => b.price_per_hour - a.price_per_hour);
+    } else if (filter === 'Low Rating') {
+      return items.sort((a, b) => a.rating - b.rating);
+    } else if (filter === 'High Rating') {
+      return items.sort((a, b) => b.rating - a.rating);
+    } else {
+      return items;
+    }
+  }
+
+  const sortedItems = toSortItems(items, filter);
 
   const getFirstPage = async () => {
     setLoading(true);
@@ -125,10 +152,10 @@ const Psychologists = ({ addToFaforites, authUser }) => {
 
   return (
     <>
-      <FilterComponent />
+      <SortComponent onFilterChange={onFilterChange} />
       <PsychologistList
         authUser={authUser}
-        items={items}
+        items={sortedItems}
         loadMore={onLoadMore}
         loading={loading}
         visible={visible}
