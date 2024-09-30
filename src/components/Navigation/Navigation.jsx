@@ -69,6 +69,7 @@ const Navigation = ({ authUser }) => {
             <UserBar
               openMenu={onOpenSignModal}
               onOpenRegModal={onOpenRegModal}
+              showBurgerMenu={showBurgerMenu}
             />
           </div>
         ) : (

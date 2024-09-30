@@ -16,7 +16,7 @@ const customStyles = {
     transform: 'translate(-50%, -50%)',
     padding: '20px',
     maxWidth: '505px',
-    height: '505px',
+    height: '509px',
     borderRadius: '30px',
     position: 'relative',
     backgroundImage: 'linear-gradient(135deg, #fff7f0, #ffe5cc)',
