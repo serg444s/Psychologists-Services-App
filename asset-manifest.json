@@ -1,28 +1,28 @@
 {
   "files": {
-    "main.css": "/static/css/main.c309c4b0.css",
-    "main.js": "/static/js/main.c967d0ea.js",
-    "static/css/936.32612130.chunk.css": "/static/css/936.32612130.chunk.css",
-    "static/js/936.dc7030c2.chunk.js": "/static/js/936.dc7030c2.chunk.js",
-    "static/css/270.c51cce30.chunk.css": "/static/css/270.c51cce30.chunk.css",
-    "static/js/270.91375acd.chunk.js": "/static/js/270.91375acd.chunk.js",
-    "static/css/733.99a3c53b.chunk.css": "/static/css/733.99a3c53b.chunk.css",
-    "static/js/733.8808ec86.chunk.js": "/static/js/733.8808ec86.chunk.js",
-    "static/media/image.jpg": "/static/media/image.b3a4eef828fa5e609886.jpg",
-    "static/media/sprite.svg": "/static/media/sprite.82392249a07a78cd7289e8fb0a185fb0.svg",
-    "static/media/404.jpg": "/static/media/404.ab1ed3fe4267fac86437.jpg",
-    "index.html": "/index.html",
-    "main.c309c4b0.css.map": "/static/css/main.c309c4b0.css.map",
-    "main.c967d0ea.js.map": "/static/js/main.c967d0ea.js.map",
-    "936.32612130.chunk.css.map": "/static/css/936.32612130.chunk.css.map",
-    "936.dc7030c2.chunk.js.map": "/static/js/936.dc7030c2.chunk.js.map",
-    "270.c51cce30.chunk.css.map": "/static/css/270.c51cce30.chunk.css.map",
-    "270.91375acd.chunk.js.map": "/static/js/270.91375acd.chunk.js.map",
-    "733.99a3c53b.chunk.css.map": "/static/css/733.99a3c53b.chunk.css.map",
-    "733.8808ec86.chunk.js.map": "/static/js/733.8808ec86.chunk.js.map"
+    "main.css": "/Psychologists-Services-App/static/css/main.c309c4b0.css",
+    "main.js": "/Psychologists-Services-App/static/js/main.9e7040d3.js",
+    "static/css/936.c4ce0b5d.chunk.css": "/Psychologists-Services-App/static/css/936.c4ce0b5d.chunk.css",
+    "static/js/936.dc7030c2.chunk.js": "/Psychologists-Services-App/static/js/936.dc7030c2.chunk.js",
+    "static/css/270.c51cce30.chunk.css": "/Psychologists-Services-App/static/css/270.c51cce30.chunk.css",
+    "static/js/270.91375acd.chunk.js": "/Psychologists-Services-App/static/js/270.91375acd.chunk.js",
+    "static/css/733.99a3c53b.chunk.css": "/Psychologists-Services-App/static/css/733.99a3c53b.chunk.css",
+    "static/js/733.8808ec86.chunk.js": "/Psychologists-Services-App/static/js/733.8808ec86.chunk.js",
+    "static/media/image.jpg": "/Psychologists-Services-App/static/media/image.b3a4eef828fa5e609886.jpg",
+    "static/media/sprite.svg": "/Psychologists-Services-App/static/media/sprite.82392249a07a78cd7289e8fb0a185fb0.svg",
+    "static/media/404.jpg": "/Psychologists-Services-App/static/media/404.ab1ed3fe4267fac86437.jpg",
+    "index.html": "/Psychologists-Services-App/index.html",
+    "main.c309c4b0.css.map": "/Psychologists-Services-App/static/css/main.c309c4b0.css.map",
+    "main.9e7040d3.js.map": "/Psychologists-Services-App/static/js/main.9e7040d3.js.map",
+    "936.c4ce0b5d.chunk.css.map": "/Psychologists-Services-App/static/css/936.c4ce0b5d.chunk.css.map",
+    "936.dc7030c2.chunk.js.map": "/Psychologists-Services-App/static/js/936.dc7030c2.chunk.js.map",
+    "270.c51cce30.chunk.css.map": "/Psychologists-Services-App/static/css/270.c51cce30.chunk.css.map",
+    "270.91375acd.chunk.js.map": "/Psychologists-Services-App/static/js/270.91375acd.chunk.js.map",
+    "733.99a3c53b.chunk.css.map": "/Psychologists-Services-App/static/css/733.99a3c53b.chunk.css.map",
+    "733.8808ec86.chunk.js.map": "/Psychologists-Services-App/static/js/733.8808ec86.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.c309c4b0.css",
-    "static/js/main.c967d0ea.js"
+    "static/js/main.9e7040d3.js"
   ]
 }
