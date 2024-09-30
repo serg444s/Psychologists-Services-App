@@ -2,7 +2,7 @@
   "name": "react-homework-template",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://psychologists-services-30nriy2te-serhyys-projects.vercel.app/",
+  "homepage": "https://serg444s.github.io/Psychologists-Services-App/",
   "dependencies": {
     "@hookform/resolvers": "^3.9.0",
     "@reduxjs/toolkit": "^2.2.7",
