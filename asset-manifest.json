@@ -1,28 +1,28 @@
 {
   "files": {
-    "main.css": "/psychologists-services-app-git-gh-pages-serhyys-projects.vercel.app/static/css/main.c309c4b0.css",
-    "main.js": "/psychologists-services-app-git-gh-pages-serhyys-projects.vercel.app/static/js/main.01768546.js",
-    "static/css/936.011febe6.chunk.css": "/psychologists-services-app-git-gh-pages-serhyys-projects.vercel.app/static/css/936.011febe6.chunk.css",
-    "static/js/936.dc7030c2.chunk.js": "/psychologists-services-app-git-gh-pages-serhyys-projects.vercel.app/static/js/936.dc7030c2.chunk.js",
-    "static/css/270.c51cce30.chunk.css": "/psychologists-services-app-git-gh-pages-serhyys-projects.vercel.app/static/css/270.c51cce30.chunk.css",
-    "static/js/270.91375acd.chunk.js": "/psychologists-services-app-git-gh-pages-serhyys-projects.vercel.app/static/js/270.91375acd.chunk.js",
-    "static/css/733.99a3c53b.chunk.css": "/psychologists-services-app-git-gh-pages-serhyys-projects.vercel.app/static/css/733.99a3c53b.chunk.css",
-    "static/js/733.8808ec86.chunk.js": "/psychologists-services-app-git-gh-pages-serhyys-projects.vercel.app/static/js/733.8808ec86.chunk.js",
-    "static/media/image.jpg": "/psychologists-services-app-git-gh-pages-serhyys-projects.vercel.app/static/media/image.b3a4eef828fa5e609886.jpg",
-    "static/media/sprite.svg": "/psychologists-services-app-git-gh-pages-serhyys-projects.vercel.app/static/media/sprite.82392249a07a78cd7289e8fb0a185fb0.svg",
-    "static/media/404.jpg": "/psychologists-services-app-git-gh-pages-serhyys-projects.vercel.app/static/media/404.ab1ed3fe4267fac86437.jpg",
-    "index.html": "/psychologists-services-app-git-gh-pages-serhyys-projects.vercel.app/index.html",
-    "main.c309c4b0.css.map": "/psychologists-services-app-git-gh-pages-serhyys-projects.vercel.app/static/css/main.c309c4b0.css.map",
-    "main.01768546.js.map": "/psychologists-services-app-git-gh-pages-serhyys-projects.vercel.app/static/js/main.01768546.js.map",
-    "936.011febe6.chunk.css.map": "/psychologists-services-app-git-gh-pages-serhyys-projects.vercel.app/static/css/936.011febe6.chunk.css.map",
-    "936.dc7030c2.chunk.js.map": "/psychologists-services-app-git-gh-pages-serhyys-projects.vercel.app/static/js/936.dc7030c2.chunk.js.map",
-    "270.c51cce30.chunk.css.map": "/psychologists-services-app-git-gh-pages-serhyys-projects.vercel.app/static/css/270.c51cce30.chunk.css.map",
-    "270.91375acd.chunk.js.map": "/psychologists-services-app-git-gh-pages-serhyys-projects.vercel.app/static/js/270.91375acd.chunk.js.map",
-    "733.99a3c53b.chunk.css.map": "/psychologists-services-app-git-gh-pages-serhyys-projects.vercel.app/static/css/733.99a3c53b.chunk.css.map",
-    "733.8808ec86.chunk.js.map": "/psychologists-services-app-git-gh-pages-serhyys-projects.vercel.app/static/js/733.8808ec86.chunk.js.map"
+    "main.css": "/static/css/main.c309c4b0.css",
+    "main.js": "/static/js/main.c967d0ea.js",
+    "static/css/936.32612130.chunk.css": "/static/css/936.32612130.chunk.css",
+    "static/js/936.dc7030c2.chunk.js": "/static/js/936.dc7030c2.chunk.js",
+    "static/css/270.c51cce30.chunk.css": "/static/css/270.c51cce30.chunk.css",
+    "static/js/270.91375acd.chunk.js": "/static/js/270.91375acd.chunk.js",
+    "static/css/733.99a3c53b.chunk.css": "/static/css/733.99a3c53b.chunk.css",
+    "static/js/733.8808ec86.chunk.js": "/static/js/733.8808ec86.chunk.js",
+    "static/media/image.jpg": "/static/media/image.b3a4eef828fa5e609886.jpg",
+    "static/media/sprite.svg": "/static/media/sprite.82392249a07a78cd7289e8fb0a185fb0.svg",
+    "static/media/404.jpg": "/static/media/404.ab1ed3fe4267fac86437.jpg",
+    "index.html": "/index.html",
+    "main.c309c4b0.css.map": "/static/css/main.c309c4b0.css.map",
+    "main.c967d0ea.js.map": "/static/js/main.c967d0ea.js.map",
+    "936.32612130.chunk.css.map": "/static/css/936.32612130.chunk.css.map",
+    "936.dc7030c2.chunk.js.map": "/static/js/936.dc7030c2.chunk.js.map",
+    "270.c51cce30.chunk.css.map": "/static/css/270.c51cce30.chunk.css.map",
+    "270.91375acd.chunk.js.map": "/static/js/270.91375acd.chunk.js.map",
+    "733.99a3c53b.chunk.css.map": "/static/css/733.99a3c53b.chunk.css.map",
+    "733.8808ec86.chunk.js.map": "/static/js/733.8808ec86.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.c309c4b0.css",
-    "static/js/main.01768546.js"
+    "static/js/main.c967d0ea.js"
   ]
 }
