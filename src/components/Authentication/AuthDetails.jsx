@@ -6,7 +6,7 @@ import { auth } from 'firebase-db';
 const AuthDetails = ({ authUser }) => {
   function logOut() {
     signOut(auth)
-      .then(console.log('Log out ok'))
+      .then()
       .catch(e => {
         console.error(e);
       });
@@ -21,7 +21,7 @@ const AuthDetails = ({ authUser }) => {
   }
 
   return (
-    <>
+    <div className={css.wrap}>
       {authUser && (
         <div className={css.container}>
           <IconSvg iconName={'user'} styles={css.icon} />
@@ -31,7 +31,7 @@ const AuthDetails = ({ authUser }) => {
           </button>
         </div>
       )}
-    </>
+    </div>
   );
 };
 

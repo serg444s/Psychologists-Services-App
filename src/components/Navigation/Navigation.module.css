@@ -4,6 +4,10 @@
   justify-content: space-between;
 }
 
+.display {
+  display: none;
+}
+
 .logo {
   font-weight: 700;
   font-size: 20px;
@@ -18,12 +22,7 @@
 }
 
 .nav {
-  display: flex;
-  gap: 30px;
-  margin-right: auto;
-  align-items: center;
-  justify-content: center;
-  margin-left: 200px;
+  display: none;
 }
 
 .link {
@@ -44,4 +43,29 @@
   height: 2px;
   background-color: rgba(16, 24, 40, 0.1);
   margin: 24px auto;
+}
+
+.burgerbtn {
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
+
+@media screen and (min-width: 1440px) {
+  .nav {
+    display: flex;
+    gap: 30px;
+    margin-right: auto;
+    align-items: center;
+    justify-content: center;
+    margin-left: 200px;
+  }
+
+  .burgerbtn {
+    display: none;
+  }
+
+  .display {
+    display: block;
+  }
 }
