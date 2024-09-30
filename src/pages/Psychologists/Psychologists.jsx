@@ -4,6 +4,7 @@ import { firstPageQuery, nextPageQuery } from '../../firebase-db';
 import { get } from 'firebase/database';
 import toast from 'react-hot-toast';
 import SortComponent from 'components/SortComponent/SortComponent';
+import css from './Psychologists.module.css';
 
 const Psychologists = ({ addToFaforites, authUser }) => {
   const [items, setItems] = useState([]);
@@ -101,7 +102,7 @@ const Psychologists = ({ addToFaforites, authUser }) => {
   };
 
   return (
-    <>
+    <div className={css.page}>
       <SortComponent onFilterChange={onFilterChange} />
       <PsychologistList
         authUser={authUser}
@@ -111,7 +112,7 @@ const Psychologists = ({ addToFaforites, authUser }) => {
         visible={visible}
         addToFaforites={addToFaforites}
       />
-    </>
+    </div>
   );
 };
 

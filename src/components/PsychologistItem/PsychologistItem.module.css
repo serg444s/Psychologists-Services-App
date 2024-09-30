@@ -1,5 +1,8 @@
 .container {
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   border-radius: 24px;
   padding: 24px;
   background-color: #fbfbfb;
@@ -7,14 +10,18 @@
 }
 
 .content {
-  max-width: 990px;
+  /* max-width: 150px; */
 }
 
 .header {
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
   justify-content: space-between;
   margin-bottom: 24px;
+}
+
+.namecontainer {
 }
 
 .imgwrap {
@@ -39,7 +46,7 @@
 
 .psychologist {
   font-weight: 500;
-  font-size: 16px;
+  font-size: 12px;
   line-height: 1.5;
   color: #8a8a89;
   text-align: start;
@@ -47,17 +54,30 @@
 
 .name {
   font-weight: 500;
-  font-size: 24px;
+  font-size: 20px;
   line-height: 100%;
   color: #191a15;
   text-align: start;
+  width: 220px;
 }
 
 .details {
+  margin-top: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 28px;
+  gap: 8px;
+}
+
+.reviews {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 150%;
+  color: #191a15;
+
+  span {
+    display: none;
+  }
 }
 
 .add {
@@ -95,15 +115,16 @@
     line-height: 150%;
     color: #8a8a89;
   }
+}
 
-  span {
-    color: #191a15;
-  }
+.span {
+  font-size: 12px;
+  color: #191a15;
 }
 
 .text {
   font-weight: 400;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 125%;
   color: rgba(25, 26, 21, 0.5);
   text-align: start;
@@ -124,4 +145,61 @@
 .btn:hover,
 .btn:focus {
   font-weight: 600;
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    width: 700px;
+    align-items: flex-start;
+  }
+
+  .header {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    gap: 100px;
+  }
+
+  .span {
+    font-size: 16px;
+  }
+
+  .text {
+    font-size: 16px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .container {
+    align-items: flex-start;
+    flex-direction: row;
+    width: 1180px;
+  }
+
+  .content {
+    width: 990px;
+  }
+
+  .details {
+    gap: 28px;
+    margin-top: 0;
+  }
+
+  .reviews {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    color: #191a15;
+    span {
+      display: inline;
+    }
+  }
+
+  .psychologist {
+    font-size: 16px;
+  }
+
+  .name {
+    font-size: 24px;
+  }
 }

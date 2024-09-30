@@ -35,13 +35,15 @@ const PsychologistItem = ({ item, addToFaforites, authUser }) => {
       </div>
       <div className={css.content}>
         <div className={css.header}>
-          <div>
+          <div className={css.namecontainer}>
             <p className={css.psychologist}>Psychologist</p>
             <h2 className={css.name}>{item.name}</h2>
           </div>
           <div className={css.details}>
             <p className={css.reviews}>
-              <IconSvg width={16} height={16} iconName={'star'} />
+              <span>
+                <IconSvg width={16} height={16} iconName={'star'} />
+              </span>
               {`Raiting: ${item.rating}`}
             </p>
             <p
@@ -61,19 +63,19 @@ const PsychologistItem = ({ item, addToFaforites, authUser }) => {
         <ul className={css.list}>
           <li className={css.item}>
             <p>Experience: </p>
-            <span>{item.experience}</span>
+            <span className={css.span}>{item.experience}</span>
           </li>
           <li className={css.item}>
             <p>License: </p>
-            <span>{item.license}</span>
+            <span className={css.span}>{item.license}</span>
           </li>
           <li className={css.item}>
             <p>Specialization: </p>
-            <span>{item.specialization}</span>
+            <span className={css.span}>{item.specialization}</span>
           </li>
           <li className={css.item}>
             <p>Initial consultation: </p>
-            <span>{item.initial_consultation}</span>
+            <span className={css.span}>{item.initial_consultation}</span>
           </li>
         </ul>
         <p className={css.text}>{item.about}</p>
