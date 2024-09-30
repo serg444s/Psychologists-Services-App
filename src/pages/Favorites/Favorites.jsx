@@ -3,11 +3,15 @@ import PsychologistList from '../../components/PsychologistList/PsychologistList
 const Favorites = ({ favorites, addToFaforites, authUser }) => {
   return (
     <div>
-      <PsychologistList
-        items={favorites}
-        addToFaforites={addToFaforites}
-        authUser={authUser}
-      />
+      {favorites.length > 0 ? (
+        <PsychologistList
+          items={favorites}
+          addToFaforites={addToFaforites}
+          authUser={authUser}
+        />
+      ) : (
+        <p>You haven't added to favorites yet...</p>
+      )}
     </div>
   );
 };

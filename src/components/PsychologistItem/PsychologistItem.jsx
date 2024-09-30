@@ -5,23 +5,25 @@ import ReviewList from '../ReviewsList/ReviewsList';
 
 const PsychologistItem = ({ item, addToFaforites, authUser }) => {
   const [show, setShow] = useState(false);
+  const [isFavorite, setIsFavorite] = useState(false);
 
   function ShowReviews() {
     setShow(true);
   }
 
-  const [isFavorite, setIsFavorite] = useState(false);
+  const add = item => {
+    addToFaforites(item);
+    setIsFavorite(!isFavorite);
+  };
 
   useEffect(() => {
     if (!authUser) return;
     const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
-
     const isItemFavorite = favorites.some(
-      favItem => favItem.name === item.name
+      favItem => favItem.psychologId === item.psychologId
     );
-
     setIsFavorite(isItemFavorite);
-  }, [item.name, authUser]);
+  }, [item.psychologId, authUser]);
 
   return (
     <div className={css.container}>
@@ -51,7 +53,7 @@ const PsychologistItem = ({ item, addToFaforites, authUser }) => {
             >{`Price/1hour: ${item.price_per_hour}$`}</p>
             <button
               onClick={() => {
-                addToFaforites(item);
+                add(item);
               }}
               className={css.add}
             >
