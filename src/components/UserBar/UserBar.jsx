@@ -2,21 +2,13 @@ import css from './UserBar.module.css';
 
 const UserBar = ({ openMenu, onOpenRegModal, closeBurger, showBurgerMenu }) => {
   function logIn() {
-    if (showBurgerMenu) {
-      closeBurger();
-      openMenu();
-    } else {
-      openMenu();
-    }
+    openMenu();
+    closeBurger();
   }
 
   function registration() {
-    if (showBurgerMenu) {
-      closeBurger();
-      onOpenRegModal();
-    } else {
-      onOpenRegModal();
-    }
+    onOpenRegModal();
+    closeBurger();
   }
 
   return (

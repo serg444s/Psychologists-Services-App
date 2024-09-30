@@ -1,4 +1,4 @@
-import { auth } from 'firebase-db';
+import { auth } from 'components/Authentication/firebase-db';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Navigate } from 'react-router-dom';
 

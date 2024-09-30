@@ -130,6 +130,12 @@
     width: 464px;
     height: 526px;
   }
+
+  .title {
+    font-size: 80px;
+    text-align: start;
+    max-width: 590px;
+  }
 }
 
 @media screen and (min-width: 1440px) {
@@ -140,7 +146,6 @@
   .title {
     font-size: 80px;
     text-align: start;
-    max-width: 590px;
   }
 
   .orange {

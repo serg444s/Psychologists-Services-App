@@ -1,7 +1,7 @@
 import { signOut } from 'firebase/auth';
 import IconSvg from '../IconSvg/IconSvg';
 import css from './AuthDetails.module.css';
-import { auth } from 'firebase-db';
+import { auth } from './firebase-db';
 
 const AuthDetails = ({ authUser }) => {
   function logOut() {

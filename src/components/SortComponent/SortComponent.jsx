@@ -3,7 +3,6 @@ import css from './SortComponent.module.css';
 const SortComponent = ({ onFilterChange }) => {
   const handleFilterChange = event => {
     onFilterChange(event.target.value);
-    console.log('event', event.target.value);
   };
 
   return (

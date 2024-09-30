@@ -56,6 +56,12 @@
   background-color: transparent;
 }
 
+@media screen and (min-width: 768px) {
+  .logo {
+    font-size: 20px;
+  }
+}
+
 @media screen and (min-width: 1440px) {
   .nav {
     display: flex;
@@ -72,9 +78,5 @@
 
   .display {
     display: block;
-  }
-
-  .logo {
-    font-size: 20px;
   }
 }

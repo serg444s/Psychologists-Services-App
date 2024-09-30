@@ -5,9 +5,9 @@ import Navigation from './components/Navigation/Navigation.jsx';
 import Loader from './components/Loader/Loader.jsx';
 import PrivateRoute from './PrivateRoute.jsx';
 import toast, { Toaster } from 'react-hot-toast';
-import { onAuthStateChanged } from 'firebase/auth';
-import { auth } from 'firebase-db';
 import NotFoundPage from 'pages/NotFound/NotFound';
+import { onAuthStateChanged } from 'firebase/auth';
+import { auth } from 'components/Authentication/firebase-db';
 
 function App() {
   const Home = lazy(() => import('./pages/Home/Home.jsx'));

@@ -1,10 +1,13 @@
 import { useEffect, useState } from 'react';
 import PsychologistList from '../../components/PsychologistList/PsychologistList';
-import { firstPageQuery, nextPageQuery } from '../../firebase-db';
 import { get } from 'firebase/database';
 import toast from 'react-hot-toast';
 import SortComponent from 'components/SortComponent/SortComponent';
 import css from './Psychologists.module.css';
+import {
+  firstPageQuery,
+  nextPageQuery,
+} from 'components/Authentication/firebase-db';
 
 const Psychologists = ({ addToFaforites, authUser }) => {
   const [items, setItems] = useState([]);
@@ -77,8 +80,6 @@ const Psychologists = ({ addToFaforites, authUser }) => {
           ? data
           : Object.values(data);
 
-        console.log('current array', Object.values(data));
-
         setItems(prevItems => {
           const newItems = psychologistsArray.filter(
             item =>
@@ -96,7 +97,6 @@ const Psychologists = ({ addToFaforites, authUser }) => {
       }
     } catch (error) {
       toast.error('Some went wrong');
-      console.log(error);
     }
     setLoading(false);
   };

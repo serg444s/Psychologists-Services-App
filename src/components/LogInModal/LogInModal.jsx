@@ -5,8 +5,8 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import css from './LogInModal.module.css';
 import { signInWithEmailAndPassword } from 'firebase/auth';
-import { auth } from 'firebase-db';
 import toast from 'react-hot-toast';
+import { auth } from 'components/Authentication/firebase-db';
 
 const customStyles = {
   content: {
