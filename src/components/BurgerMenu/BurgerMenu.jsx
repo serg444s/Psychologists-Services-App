@@ -14,9 +14,9 @@ const customStyles = {
     bottom: 'auto',
     marginRight: '-50%',
     transform: 'translate(-50%, -50%)',
-    padding: '60px',
-    maxWidth: '565px',
-    height: '509px',
+    padding: '20px',
+    maxWidth: '505px',
+    height: '505px',
     borderRadius: '30px',
     position: 'relative',
     backgroundImage: 'linear-gradient(135deg, #fff7f0, #ffe5cc)',
@@ -76,7 +76,7 @@ const BurgerMenu = ({
             closeBurger={closeModal}
           />
         ) : (
-          <AuthDetails authUser={authUser} />
+          <AuthDetails authUser={authUser} closeBurger={closeModal} />
         )}
       </div>
     </Modal>

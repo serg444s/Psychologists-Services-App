@@ -4,18 +4,23 @@
   justify-content: space-between;
 }
 
+.navigation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .display {
   display: none;
 }
 
 .logo {
   font-weight: 700;
-  font-size: 20px;
+  font-size: 10px;
   line-height: 120%;
   letter-spacing: -0.02em;
   color: #fc832c;
   transition: all 0.25s ease;
-
   span {
     color: #191a15;
   }
@@ -67,5 +72,9 @@
 
   .display {
     display: block;
+  }
+
+  .logo {
+    font-size: 20px;
   }
 }

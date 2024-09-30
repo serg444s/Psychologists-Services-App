@@ -1,17 +1,20 @@
 .homecontainer {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: space-between;
   background-image: url(../../img/fon.svg);
+  max-width: 100%;
+  gap: 40px;
 }
 
 .main {
-  width: 595px;
+  max-width: 100%;
 }
 
 .title {
   font-weight: 600;
-  font-size: 80px;
+  font-size: 40px;
   line-height: 102%;
   letter-spacing: -0.02em;
   color: #191a15;
@@ -26,13 +29,13 @@
 .text {
   font-weight: 500;
   font-size: 18px;
-  line-height: 133%;
+  line-height: 1.33;
   letter-spacing: -0.02em;
   color: #191a15;
   margin-bottom: 40px;
   margin-top: 20px;
   text-align: start;
-  max-width: 500px;
+  max-width: 100%;
 }
 
 .link {
@@ -42,6 +45,7 @@
   background-color: #fc832c;
   color: white;
   transition: all 0.25s ease;
+  margin-bottom: 20px;
 }
 
 .link:hover,
@@ -51,8 +55,11 @@
 
 .wrapper {
   border-radius: 10px;
-  width: 464px;
-  height: 526px;
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+
+  /* height: 526px; */
   background-image: url('../../img/image.jpg');
   position: relative;
 }
@@ -87,16 +94,16 @@
 
 .orange {
   border-radius: 20px;
-  width: 311px;
-  height: 118px;
+  max-width: 311px;
+  max-height: 118px;
   background: #fc832c;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
   position: absolute;
-  bottom: 75px;
-  left: -100px;
+  bottom: 10px;
+  left: -10px;
 }
 
 .iconwrap {
@@ -117,4 +124,19 @@
   font-weight: 700;
   font-size: 24px;
   color: #fbfbfb;
+}
+
+@media screen and (min-width: 1440px) {
+  .homecontainer {
+    flex-direction: row;
+  }
+
+  .title {
+    font-size: 80px;
+  }
+
+  .orange {
+    bottom: 75px;
+    left: -100px;
+  }
 }
